@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/peopleFragment"
+        android:icon="@drawable/ic_people"
+        android:title="@string/people" />
+
+    <item
+        android:id="@+id/filmsFragment"
+        android:icon="@drawable/ic_films"
+        android:title="@string/films" />
+    <item
+        android:id="@+id/planetsFragment"
+        android:icon="@drawable/ic_planet"
+        android:title="@string/planets" />
+    <item
+        android:id="@+id/starShipsFragment"
+        android:icon="@drawable/ic_star_ships"
+        android:title="@string/star_ships" />
+
+</menu>

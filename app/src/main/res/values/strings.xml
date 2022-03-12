@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">StarWarsApi</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="people">People</string>
+    <string name="films">Films</string>
+    <string name="planets">Planets</string>
+    <string name="star_ships">Star Ships</string>
+</resources>
