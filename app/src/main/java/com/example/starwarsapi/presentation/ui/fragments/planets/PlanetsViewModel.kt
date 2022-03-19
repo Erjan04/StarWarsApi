@@ -1,4 +1,4 @@
-package com.example.starwarsapi.presentation.planets
+package com.example.starwarsapi.presentation.ui.fragments.planets
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

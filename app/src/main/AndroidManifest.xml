@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.StarWarsApi">
         <activity
-            android:name=".presentation.main.MainActivity"
+            android:name="com.example.starwarsapi.presentation.ui.activity.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

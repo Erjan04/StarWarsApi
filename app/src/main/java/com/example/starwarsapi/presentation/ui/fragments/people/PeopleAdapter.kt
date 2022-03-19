@@ -1,15 +1,15 @@
-package com.example.starwarsapi.presentation.people
+package com.example.starwarsapi.presentation.ui.fragments.people
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.recyclerview.widget.ListAdapter
+import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.starwarsapi.databinding.ItemPeopleBinding
 import com.example.starwarsapi.domain.common.base.BaseDiffCallBack
 import com.example.starwarsapi.domain.people.entity.PeopleEntity
 
 class PeopleAdapter :
-    ListAdapter<PeopleEntity, PeopleAdapter.PeopleViewHolder>(BaseDiffCallBack()) {
+    PagingDataAdapter<PeopleEntity, PeopleAdapter.PeopleViewHolder>(BaseDiffCallBack()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PeopleViewHolder {
         return PeopleViewHolder(
@@ -22,7 +22,7 @@ class PeopleAdapter :
     }
 
     override fun onBindViewHolder(holder: PeopleViewHolder, position: Int) {
-        holder.onBind(getItem(position))
+        getItem(position)?.let { holder.onBind(it) }
     }
 
     class PeopleViewHolder(private val binding: ItemPeopleBinding) :

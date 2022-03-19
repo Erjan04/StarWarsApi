@@ -1,4 +1,4 @@
-package com.example.starwarsapi.presentation.starships
+package com.example.starwarsapi.presentation.ui.fragments.starships
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -13,7 +13,10 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class StarShipsViewModel @Inject constructor(private val getStarShipsUseCase: GetStarShipsUseCase) :
+class StarShipsViewModel @Inject constructor(
+
+    private val getStarShipsUseCase: GetStarShipsUseCase
+) :
     ViewModel() {
 
     private val _starShipsList = MutableStateFlow<List<StarShipsEntity>>(mutableListOf())

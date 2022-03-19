@@ -1,4 +1,4 @@
-package com.example.starwarsapi.presentation.starships
+package com.example.starwarsapi.presentation.ui.fragments.starships
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

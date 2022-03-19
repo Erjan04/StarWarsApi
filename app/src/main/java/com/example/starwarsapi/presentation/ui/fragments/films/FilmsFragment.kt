@@ -1,4 +1,4 @@
-package com.example.starwarsapi.presentation.films
+package com.example.starwarsapi.presentation.ui.fragments.films
 
 import android.widget.Toast
 import androidx.core.view.isVisible

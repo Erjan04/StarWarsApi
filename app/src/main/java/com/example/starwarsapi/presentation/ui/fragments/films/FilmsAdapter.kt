@@ -1,4 +1,4 @@
-package com.example.starwarsapi.presentation.films
+package com.example.starwarsapi.presentation.ui.fragments.films
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
