@@ -19,5 +19,6 @@ data class PeopleEntity(
     val skinColor: String,
     @SerializedName("eye_color")
     val eyeColor: String,
+    val gender: String,
     val films: List<String>, override val id: Int,
 ): BaseId

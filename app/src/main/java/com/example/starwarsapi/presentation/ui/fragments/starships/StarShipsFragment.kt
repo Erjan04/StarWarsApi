@@ -70,4 +70,8 @@ class StarShipsFragment : BaseFragment<FragmentStarShipsBinding>() {
         return FragmentStarShipsBinding.inflate(layoutInflater)
     }
 
+    override fun setupListeners() {
+
+    }
+
 }

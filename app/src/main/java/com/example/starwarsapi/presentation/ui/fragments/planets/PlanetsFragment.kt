@@ -68,4 +68,7 @@ class PlanetsFragment : BaseFragment<FragmentPlanetsBinding>() {
         return FragmentPlanetsBinding.inflate(layoutInflater)
     }
 
+    override fun setupListeners() {
+    }
+
 }

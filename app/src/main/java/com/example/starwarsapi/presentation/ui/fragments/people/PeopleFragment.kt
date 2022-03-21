@@ -4,11 +4,12 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.paging.PagingData
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.starwarsapi.data.common.utils.extension.stateLoad
 import com.example.starwarsapi.databinding.FragmentPeopleBinding
 import com.example.starwarsapi.domain.common.base.BaseFragment
+import com.example.starwarsapi.domain.common.utils.extension.stateLoad
 import com.example.starwarsapi.domain.people.entity.PeopleEntity
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.launchIn
@@ -23,31 +24,18 @@ class PeopleFragment : BaseFragment<FragmentPeopleBinding>() {
     }
 
     override fun setupObservers() {
-        // observeState()
         observePeoples()
     }
 
-//    private fun observeState() {
-//        viewModel.state.flowWithLifecycle(lifecycle, Lifecycle.State.STARTED).onEach {
-//            handleState(it)
-//        }.launchIn(lifecycleScope)
-//    }
-
-//    private fun handleState(state: PeopleViewModel.PeopleFragmentState) {
-//        when (state) {
-//            is PeopleViewModel.PeopleFragmentState.IsLoading -> handleLoading(state.isLoading)
-//            is PeopleViewModel.PeopleFragmentState.ShowToast -> Toast.makeText(
-//                requireContext(),
-//                state.message,
-//                Toast.LENGTH_SHORT
-//            ).show()
-//            is PeopleViewModel.PeopleFragmentState.Init -> Unit
-//        }
-//    }
-
-//    private fun handleLoading(loading: Boolean) {
-//        binding.progress.isVisible = loading
-//    }
+    override fun setupListeners() {
+        adapter.onItemClickListener = {
+            findNavController().navigate(
+                PeopleFragmentDirections.actionPeopleFragmentToPeopleDetailFragment(
+                    it.id
+                )
+            )
+        }
+    }
 
     private fun observePeoples() {
         viewModel.fetchPeople().flowWithLifecycle(lifecycle, Lifecycle.State.STARTED)

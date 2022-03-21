@@ -3,6 +3,7 @@ package com.example.starwarsapi.data.people.remote
 import com.example.starwarsapi.data.common.response.StarWarsResponse
 import com.example.starwarsapi.data.people.dto.PeopleModelDto
 import retrofit2.http.GET
+import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface PeopleApi {
@@ -11,5 +12,10 @@ interface PeopleApi {
     suspend fun getPeopleResponse(
         @Query("page") page: Int
     ): StarWarsResponse<PeopleModelDto>
+
+    @GET("/api/people/:id/")
+    suspend fun getPeopleDetailData(
+        @Path("id") id: Int
+    ): PeopleModelDto
 
 }

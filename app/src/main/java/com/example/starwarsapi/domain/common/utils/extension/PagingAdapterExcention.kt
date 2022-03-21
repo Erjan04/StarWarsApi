@@ -1,4 +1,4 @@
-package com.example.starwarsapi.data.common.utils.extension
+package com.example.starwarsapi.domain.common.utils.extension
 
 import android.widget.ProgressBar
 import androidx.core.view.isVisible

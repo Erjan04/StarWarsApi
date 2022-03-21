@@ -6,4 +6,8 @@
     <string name="films">Films</string>
     <string name="planets">Planets</string>
     <string name="star_ships">Star Ships</string>
+    <string name="gender">Gender</string>
+    <string name="mass">Mass</string>
+    <string name="hair_color">Hair color</string>
+    <string name="name">Name</string>
 </resources>

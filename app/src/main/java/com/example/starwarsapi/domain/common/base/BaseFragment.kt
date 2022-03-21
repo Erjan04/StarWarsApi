@@ -23,8 +23,10 @@ abstract class BaseFragment<VB : ViewBinding> : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         setupUI()
         setupObservers()
+        setupListeners()
     }
 
+    protected abstract fun setupListeners()
     protected abstract fun setupObservers()
     protected abstract fun setupUI()
 }

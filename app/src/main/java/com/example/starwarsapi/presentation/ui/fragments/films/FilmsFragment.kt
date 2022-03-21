@@ -67,4 +67,8 @@ class FilmsFragment : BaseFragment<FragmentFilmsBinding>() {
     override fun bind(): FragmentFilmsBinding {
         return FragmentFilmsBinding.inflate(layoutInflater)
     }
+
+    override fun setupListeners() {
+
+    }
 }

@@ -11,6 +11,8 @@ import com.example.starwarsapi.domain.people.entity.PeopleEntity
 class PeopleAdapter :
     PagingDataAdapter<PeopleEntity, PeopleAdapter.PeopleViewHolder>(BaseDiffCallBack()) {
 
+    var onItemClickListener: ((PeopleEntity) -> Unit)? = null
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PeopleViewHolder {
         return PeopleViewHolder(
             ItemPeopleBinding.inflate(
@@ -25,8 +27,16 @@ class PeopleAdapter :
         getItem(position)?.let { holder.onBind(it) }
     }
 
-    class PeopleViewHolder(private val binding: ItemPeopleBinding) :
+    inner class PeopleViewHolder(private val binding: ItemPeopleBinding) :
         RecyclerView.ViewHolder(binding.root) {
+
+        init {
+            binding.apply {
+                root.setOnClickListener {
+                    onItemClickListener?.invoke(getItem(absoluteAdapterPosition)!!)
+                }
+            }
+        }
 
         fun onBind(peopleEntity: PeopleEntity) {
             binding.tvName.text = peopleEntity.name

@@ -14,6 +14,8 @@ class PeopleModelDto(
     val hairColor: String,
     @SerializedName("skin_color")
     val skinColor: String,
+    @SerializedName("gender")
+    val gender: String,
     @SerializedName("eye_color")
     val eyeColor: String,
     @SerializedName("films")
@@ -30,6 +32,7 @@ fun PeopleModelDto.toPeople(): PeopleEntity {
         hairColor,
         skinColor,
         eyeColor,
+        gender,
         films,
         id
     )

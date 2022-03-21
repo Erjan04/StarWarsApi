@@ -5,11 +5,32 @@
     android:id="@+id/nav_graph"
     app:startDestination="@id/peopleFragment">
 
+    <!--    PeopleFragment-->
     <fragment
         android:id="@+id/peopleFragment"
         android:name="com.example.starwarsapi.presentation.ui.fragments.people.PeopleFragment"
         android:label="fragment_people"
-        tools:layout="@layout/fragment_people" />
+        tools:layout="@layout/fragment_people">
+
+        <action
+            android:id="@+id/action_peopleFragment_to_peopleDetailFragment"
+            app:destination="@id/peopleDetailFragment" />
+
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/peopleDetailFragment"
+        android:name="com.example.starwarsapi.presentation.ui.fragments.people.detail.PeopleDetailFragment"
+        android:label="fragment_people_detail"
+        tools:layout="@layout/fragment_people_detail">
+
+        <argument
+            android:name="id"
+            app:argType="integer" />
+
+    </fragment>
+
     <fragment
         android:id="@+id/filmsFragment"
         android:name="com.example.starwarsapi.presentation.ui.fragments.films.FilmsFragment"
@@ -25,5 +46,6 @@
         android:name="com.example.starwarsapi.presentation.ui.fragments.starships.StarShipsFragment"
         android:label="fragment_star_ships"
         tools:layout="@layout/fragment_star_ships" />
+
 
 </navigation>
